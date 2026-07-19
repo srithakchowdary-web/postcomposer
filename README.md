@@ -18,8 +18,7 @@ cp .env.example .env       # then edit .env if needed
 npm run dev                # starts on http://localhost:5000
 ```
 Env vars (`backend/.env`):
-```
-PORT=5000
+``
 MONGO_URI=mongodb://127.0.0.1:27017/postcomposer
 JWT_SECRET=change-this-to-a-long-random-string
 ```
