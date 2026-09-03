@@ -7,9 +7,26 @@ import AdminPanel from "./pages/AdminPanel.jsx";
 import ChangePassword from "./pages/ChangePassword.jsx";
 
 function PrivateRoute({ children }) {
+  const { token } = useAuth();
+  return token ? children : <Navigate to="/login" replace />;
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
           </PrivateRoute>
         }
       />
+      
       <Route
         path="/admin"
         element={
@@ -18,6 +35,16 @@ function PrivateRoute({ children }) {
           </PrivateRoute>
         }
       />
+
+      <Route
+        path="/change-password"
+        element={
+          <PrivateRoute>
+            <ChangePassword />
+          </PrivateRoute>
+        }
+      />
+
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );

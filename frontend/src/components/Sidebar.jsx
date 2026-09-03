@@ -25,6 +25,7 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
+<<<<<<< HEAD
             </button>
           </li>
         </ul>
@@ -43,3 +44,17 @@ export default function Sidebar() {
       </nav>
     </aside>
   );
+=======
+            <button
+              onClick={handleLogout}
+              className="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-pink-100"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  );
+}
+>>>>>>> bbbd655cfb96b3874fbe09c0375c01389f20f29a
