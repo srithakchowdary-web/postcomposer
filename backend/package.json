@@ -5,12 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-<<<<<<< HEAD
     "dev": "nodemon server.js",
     "make-admin": "node scripts/make-admin.js"
-=======
-    "dev": "nodemon server.js"
->>>>>>> bbbd655cfb96b3874fbe09c0375c01389f20f29a
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
