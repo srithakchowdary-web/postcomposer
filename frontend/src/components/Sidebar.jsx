@@ -1,12 +1,15 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
+
 export default function Sidebar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
+
   return (
     <aside className="w-64 bg-pink-50 border-r border-pink-100 min-h-screen p-6 flex flex-col">
       <h1 className="text-xl font-semibold text-pink-500 mb-8">PostComposer</h1>
@@ -25,7 +28,11 @@ export default function Sidebar() {
             </Link>
           </li>
           <li>
-<<<<<<< HEAD
+            <button
+              onClick={handleLogout}
+              className="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-pink-100"
+            >
+              Logout
             </button>
           </li>
         </ul>
@@ -44,17 +51,4 @@ export default function Sidebar() {
       </nav>
     </aside>
   );
-=======
-            <button
-              onClick={handleLogout}
-              className="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-pink-100"
-            >
-              Logout
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-  );
 }
->>>>>>> bbbd655cfb96b3874fbe09c0375c01389f20f29a
